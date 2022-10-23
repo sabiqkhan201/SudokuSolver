@@ -1,19 +1,3 @@
-"""
-Name: pySudoku.py
-Author: Paul Moon
-Date: December 2012
-
-Description:
-Solves Sudoku puzzles.
-
-First try to solve by filling in the cells with only one possibility.
-If it cannot go any further, use a backtracking DFS (depth-first search)
-algorithm to try the possible solutions. As soon as a solution is found,
-it terminates the algorithm and prints it out.
-
-The algorithm assumes that empty cells are denoted with a 0.
-"""
-
 import fileinput
 import time
 

@@ -1,19 +1,4 @@
 """
-Name: Generator.py
-Author: Paul Moon
-Date: December 2012
-
-Description:
-Generates Sudoku puzzles that have a unique solution.
-Able to generate either easy (requires nothing harder than hidden singles) puzzles,
-or medium/difficult puzzles (sometimes requiring extreme strategies/techniques like
-cell-forcing chains).
-
-The algorithm that generates difficult puzzles gives you not only unique boards,
-but boards where you cannot remove any more numbers without destroying the uniqueness
-of the solution.
-"""
-
 import pySudoku
 import random
 import time
@@ -124,16 +109,6 @@ def DFS_solve(copy_s, row, col):
     return num_solutions
 
 def reduce_sudoku(s, difficulty):
-    """
-    First generate a list of integers 0-80 representing the indices
-    in the puzzle. Scramble the order. Given a complete Sudoku puzzle s,
-    try to remove the number at the first index in the list and then attempting
-    to solve it. If there exists more than one solution, then it is not a valid
-    Sudoku puzzle, so undo the last change. If easy puzzles are desired, then
-    after a puzzle with a unique solution is found, algorithm stops. If difficult
-    puzzles are wanted, then even after a valid puzzle is found, all the remaining
-    indices must be tried to see if the puzzle can be made any harder.
-    """
     indices = list(range(81))
     random.shuffle(indices)
 
